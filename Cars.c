@@ -1,14 +1,17 @@
 #include<stdio.h>
+#include<math.h>
 int main()
 {
-    int n;
-    scanf("%d",&n);
-    if(n%4==0)
+    int a,b,c;
+    scanf("%d",&a);
+    b=a%4;
+    c=a/4;
+    if(b!=0)
     {
-        printf("%d",n/4);
+        printf("%d",c+1);
     }
     else
     {
-        printf("%d",n/4+1);
+        printf("%d",c);
     }
 }
