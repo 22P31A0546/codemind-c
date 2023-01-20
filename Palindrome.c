@@ -30,5 +30,5 @@ int is_pal(int m)
     else
     {
         return 0;
-}
+    }
 }
