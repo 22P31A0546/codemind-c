@@ -1,44 +1,24 @@
 #include<stdio.h>
-#include<math.h>
-int main()
-{
-	int n,q,m,l;
-	scanf("%d",&n);
-	m=log10(n)+1;
-	q=n;
-	int arr[m],i,j,cnt=0;
-	i=0;
-	while(q!=0)
-	{
-		//i=0;
-		int r;
-		r=q%10;
-		arr[i]=r;
-		q=q/10;
-		i++;
-		//printf("%d",arr[i]);
-	}
-		
-	for(i=0;i<m;i++)
-	{
-		for(j=0;j<m;j++)
-		{
-			if(i!=j)
-			{
-				if(arr[i]==arr[j])
-				{
-					cnt++;
-				}
-			}
-		}
-	}
-	if(cnt==0)
-	{
-		printf("Unique Number");
-	}
-	else
-	{
-		printf("Not Unique Number");
-	}
-	
+int main() {
+    int n,d,x[100],j,k,i=0,c=0,s=0;
+    scanf("%d",&n);
+    while(n!=0) {
+        d=n%10;
+        x[i]=d;
+        n=n/10;
+        i++;
+    }
+    for(j=0;j<i;j++) {
+        for(k=0;k<i;k++) {
+            if(x[j]==x[k]) {
+                c++;
+            }
+        }
+    }
+    if(c==i) {
+        printf("Unique Number");
+    }
+    else {
+        printf("Not Unique Number");
+    }
 }
