@@ -1,65 +1,32 @@
 #include<stdio.h>
-#include<math.h>
-int is_prime(int);
-int megaprime(int);
-int main()
-{
-	int n;
-	scanf("%d",&n);
-	if(is_prime(n))
-	{
-		if(megaprime(n))
-		{
-			printf("Mega Prime");
-		}
-		else
-		{
-			printf("Not Mega Prime");
-		}
-		
-	}
-	else
-	{
-		printf("Not Mega Prime");
-	}
-	
-}
-int is_prime(int m)
-{
-		int	fc=0;
-	for(int i=1;i<=m;i++)
-	{
-
-		if(m%i==0)
-		{
-			fc=fc+1;			
-		}
-	}
-	return fc==2;
-}
-int megaprime(int m)
-{
-	int r,q,c=0,x;
-	x=(int) log10(m)+1;
-
-	q=m;
-	while(q!=0)
-	{
-	r=q%10;
-	int	fc=0;
-	for(int i=1;i<=r;i++)
-	{
-		if(r%i==0)
-		{
-			fc=fc+1;			
-		}
-	}
-	if(fc==2)
-	{
-		c=c+1;
-	}
-	q=q/10;
-	}
-	
-	return x==c;
+int main() {
+    int n,i,t,d,c=0,s=0,l=0; scanf("%d",&n);
+    t=n;
+    for(i=1;i<=n;i++) {
+        if(n%i==0) {
+        c++;
+        }
+    }
+    if(c==2) {
+        while(n) {
+            int k=0;
+            d=n%10;
+            n=n/10;
+            l++;
+            for(i=1;i<=d;i++) {
+                if(d%i==0) {
+                    k++;
+                }
+            }
+            if(k==2) {
+                s++;
+            }
+        }
+    }
+    if(s==l && c==2) {
+        printf("Mega Prime");
+    }
+    else if(l!=s||c>2) {
+        printf("Not Mega Prime");
+    }
 }
